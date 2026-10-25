@@ -1,0 +1,8 @@
+{
+  "name": "Horizon | Minecraft 26.3 Server Rewritten in Rust, No Java",
+  "short_name": "Horizon Minecraft Server",
+  "description": "Minecraft 26.3 server rewritten in Rust: no Java, a quarter of the RAM",
+  "category": "Other",
+  "image": "https://raw.githubusercontent.com/two-workspaces/horizon/main/icon.svg",
+  "card_desc": "Horizon: Minecraft Java Edition 26.3 rewritten in Rust and checked against vanilla. Vanilla clients join it, it boots in seconds and idles at about 0.6 GB. Runs on your own prepared game files."
+}

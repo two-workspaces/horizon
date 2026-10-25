@@ -1,0 +1,57 @@
+{
+  "services": {
+    "69b2b9b1-9da2-468d-859e-324096332889": {
+      "icon": "https://raw.githubusercontent.com/two-workspaces/horizon/main/icon.svg",
+      "name": "Horizon",
+      "build": {
+        "dockerfilePath": "Dockerfile"
+      },
+      "deploy": {
+        "startCommand": null,
+        "restartPolicyType": "ON_FAILURE",
+        "restartPolicyMaxRetries": 10
+      },
+      "source": {
+        "repo": "https://github.com/two-workspaces/horizon",
+        "rootDirectory": "/"
+      },
+      "variables": {
+        "HORIZON_EULA": {
+          "defaultValue": "",
+          "isOptional": false,
+          "description": "Type true to accept the Minecraft EULA (https://aka.ms/MinecraftEULA); the server is created once you do"
+        },
+        "HORIZON_PLAYERS": {
+          "defaultValue": "",
+          "isOptional": false,
+          "description": "Minecraft names allowed to join, separated by commas; the first one is the operator"
+        },
+        "HORIZON_RESOURCES_URL": {
+          "defaultValue": "",
+          "isOptional": false,
+          "description": "Download link to a .zip or .tar.gz of the 26.3 folder your Horizon launcher prepared (see the README)"
+        },
+        "HORIZON_ONLINE": {
+          "defaultValue": "true",
+          "isOptional": false,
+          "description": "true checks Minecraft accounts (vanilla clients); false lets Horizon's own client join, read the README first"
+        },
+        "RAILWAY_DEPLOYMENT_DRAINING_SECONDS": {
+          "defaultValue": "90",
+          "isOptional": false,
+          "description": "Time to save the world and stop the server cleanly on redeploy"
+        }
+      },
+      "networking": {
+        "tcpProxies": {
+          "25565": {}
+        }
+      },
+      "volumeMounts": {
+        "69b2b9b1-9da2-468d-859e-324096332889": {
+          "mountPath": "/data"
+        }
+      }
+    }
+  }
+}
