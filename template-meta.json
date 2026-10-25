@@ -4,5 +4,7 @@
   "description": "Minecraft 26.3 server rewritten in Rust: no Java, a quarter of the RAM",
   "category": "Other",
   "image": "https://raw.githubusercontent.com/two-workspaces/horizon/main/icon.svg",
-  "card_desc": "Horizon: Minecraft Java Edition 26.3 rewritten in Rust and checked against vanilla. Vanilla clients join it, it boots in seconds and idles at about 0.6 GB. Runs on your own prepared game files."
+  "card_desc": "Horizon: Minecraft Java Edition 26.3 rewritten in Rust and checked against vanilla. Vanilla clients join it, it boots in seconds and idles at about 0.6 GB. Runs on your own prepared game files.",
+  "id": "39435d3c-5ee7-4bf1-bd53-c0de52772f5a",
+  "published": true
 }
