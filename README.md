@@ -2,7 +2,7 @@
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/horizon-minecraft-server?referralCode=sLjDXb&utm_medium=integration&utm_source=button&utm_campaign=horizon-minecraft-server)
 
-[Horizon](https://github.com/ludovic111/horizon) is Minecraft: Java Edition 26.3 rewritten in Rust. It is one native program with no Java, checked against vanilla by 281 differential harnesses. This template runs its dedicated server, `horizon-server`, on Railway. Vanilla 26.3 clients join it like any other server, it is ready a few seconds after boot, and it idles at about 0.6 GB of memory, where a Java server with a 4 GB heap uses 3 to 4 GB.
+[Horizon](https://github.com/horizon-rust/horizon) is Minecraft: Java Edition 26.3 rewritten in Rust. It is one native program with no Java, checked against vanilla by 281 differential harnesses. This template runs its dedicated server, `horizon-server`, on Railway. Vanilla 26.3 clients join it like any other server, it is ready a few seconds after boot, and it idles at about 0.6 GB of memory, where a Java server with a 4 GB heap uses 3 to 4 GB.
 
 ## About Hosting Horizon Minecraft Server
 
@@ -26,7 +26,7 @@ It's one service, a Railway volume for the world, and a TCP proxy for players.
 
 ### Deployment Dependencies
 
-- [Horizon on GitHub](https://github.com/ludovic111/horizon)
+- [Horizon on GitHub](https://github.com/horizon-rust/horizon)
 - [Host a server (Horizon docs)](https://playhorizon.dev/docs/hosting)
 - [Template source on GitHub](https://github.com/two-workspaces/horizon)
 
@@ -50,9 +50,9 @@ The folder has `horizon-resources.json` in it. Zip the folder (or `tar czf 26.3.
 
 **Run the server.** Open a shell with `railway ssh --service Horizon` (Railway CLI), then `cd /data` and use `horizon-server`: `status` (TPS, players, RAM), `whitelist add NAME`, `op NAME`, `cmd say Hello` (any console command), `logs -n 100`, `backup`, `backups` and `restore NAME`. Settings live in `/data/server.toml`: `horizon-server config set world.difficulty=hard server.max_players=10`, then redeploy. Horizon's web panel is kept on 127.0.0.1 inside the container, because it isn't meant for the open internet.
 
-**Updates.** The template pins Horizon v0.2.57. A newer template version updates the server program. If a new release asks for newly prepared files, prepare again in the launcher, upload the new archive and change `HORIZON_RESOURCES_URL` to its link: a changed link is downloaded again on the next start, and the world is left alone.
+**Updates.** The template pins Horizon v0.2.97. A newer template version updates the server program. If a new release asks for newly prepared files, prepare again in the launcher, upload the new archive and change `HORIZON_RESOURCES_URL` to its link: a changed link is downloaded again on the next start, and the world is left alone.
 
-**Limits.** No mods with Java code, and no Bedrock players (Railway's TCP proxy can't carry UDP). Horizon is young and moves fast. Its [known issues](https://github.com/ludovic111/horizon#known-issues) apply here too.
+**Limits.** No mods with Java code, and no Bedrock players (Railway's TCP proxy can't carry UDP). Horizon is young and moves fast. Its [known issues](https://github.com/horizon-rust/horizon#known-issues) apply here too.
 
 Horizon is not an official Minecraft product, and is not approved by or associated with Mojang or Microsoft.
 

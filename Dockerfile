@@ -2,14 +2,14 @@
 # built without sound or controllers). No Minecraft files are in the image: the deployer brings their own.
 FROM debian:bookworm-slim
 
-# upgrade: github ludovic111/horizon
-ARG HORIZON_VERSION=v0.2.57
+# upgrade: github horizon-rust/horizon
+ARG HORIZON_VERSION=v0.2.97
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends ca-certificates curl libarchive-tools \
  && rm -rf /var/lib/apt/lists/* \
  && cd /tmp \
- && base=https://github.com/ludovic111/horizon/releases/download/$HORIZON_VERSION \
+ && base=https://github.com/horizon-rust/horizon/releases/download/$HORIZON_VERSION \
  && curl -fsSLO $base/horizon-server-linux-x86_64.tar.gz -fsSLO $base/SHA256SUMS \
  && grep ' horizon-server-linux-x86_64.tar.gz$' SHA256SUMS | sha256sum -c - \
  && mkdir /opt/horizon \
